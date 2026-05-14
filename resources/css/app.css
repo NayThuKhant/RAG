@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Gemini dark palette */
+    --color-gemini-100: #e3e3e3;
+    --color-gemini-200: #c4c7c5;
+    --color-gemini-400: #9aa0a6;
+    --color-gemini-500: #444746;
+    --color-gemini-600: #303134;
+    --color-gemini-700: #282a2c;
+    --color-gemini-800: #1e1f20;
+    --color-gemini-900: #131314;
+}
+
+/* Themed scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background-color: var(--color-gemini-500);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-gemini-400);
+}
+
+.ai-response {
+    p { @apply mb-2; }
+    p:last-child { @apply mb-0; }
+
+    h1, h2, h3, h4, h5, h6 { @apply font-semibold mb-1 mt-3; }
+    h1:first-child, h2:first-child, h3:first-child { @apply mt-0; }
+    h1 { @apply text-base; }
+    h2 { @apply text-sm; }
+    h3, h4, h5, h6 { @apply text-xs; }
+
+    ul { @apply list-disc pl-4 mb-2; }
+    ol { @apply list-decimal pl-4 mb-2; }
+    ul:last-child, ol:last-child { @apply mb-0; }
+    li { @apply mb-0.5; }
+
+    strong { @apply font-semibold; }
+    em { @apply italic; }
+
+    code { @apply bg-gray-100 dark:bg-gemini-600 text-gray-800 dark:text-gemini-100 px-1 py-0.5 rounded text-xs font-mono; }
+    pre { @apply bg-gray-100 dark:bg-gemini-600 rounded-lg p-3 mb-2 overflow-x-auto; }
+    pre:last-child { @apply mb-0; }
+    pre code { @apply bg-transparent p-0; }
+
+    blockquote { @apply border-l-2 border-gray-300 dark:border-gemini-500 pl-3 text-gray-600 dark:text-gemini-400 mb-2; }
+    a { @apply text-indigo-600 dark:text-indigo-400 underline; }
+    hr { @apply border-gray-200 dark:border-gemini-500 my-2; }
+}
