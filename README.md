@@ -1,8 +1,10 @@
 # RAG — Retrieval-Augmented Generation
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A Laravel application for uploading documents, extracting and embedding their content, and chatting with an AI assistant grounded in those documents.
 
-> Vibe Coded. Not production-ready.
+>  Not production-ready.
 
 ## Requirements
 
@@ -111,3 +113,7 @@ Each parser converts a file into clean Markdown text that is then chunked and em
 | `HtmlParser` | `.html`, `.xhtml` | Strips non-content tags (scripts, styles, nav, header, footer, aside) and converts to plain text via `voku/html2text`. |
 | `PlainTextParser` | `.txt`, `.md`, `.json` | Reads and normalises whitespace — no transformation. |
 | `AiParser` _(fallback)_ | images, and any other format | Sends the file to a Gemini multimodal agent (`ParseDocumentAgent`) for text extraction. Used automatically when no specific parser matches the file's MIME type. |
+
+## License
+
+MIT — see [LICENSE](LICENSE).
